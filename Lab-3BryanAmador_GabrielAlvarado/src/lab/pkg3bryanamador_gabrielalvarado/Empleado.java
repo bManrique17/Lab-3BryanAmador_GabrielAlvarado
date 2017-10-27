@@ -12,17 +12,17 @@ import java.util.Date;
  * @author Gabriel Alvarado
  */
 public class Empleado extends Persona {
-    public Date horario;
+    public int horario;
     public int numeroProductosVendidos;
 
     public Empleado() {
     }
 
-    public Date getHorario() {
+    public int getHorario() {
         return horario;
     }
 
-    public void setHorario(Date horario) {
+    public void setHorario(int horario) {
         this.horario = horario;
     }
 

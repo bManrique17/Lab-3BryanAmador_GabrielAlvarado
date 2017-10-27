@@ -19,6 +19,11 @@ public class Cliente extends Persona{
         super();
     }
 
+    public Cliente(int dinero, String Usuario, String contrasena, String email, String nombreCompleto, String id, String fecha) {
+        super(Usuario, contrasena, email, nombreCompleto, id, fecha);
+        this.dinero = dinero;
+    }
+
     public Cliente(int dinero) {
         this.dinero = dinero;
         if(this.dinero==0)

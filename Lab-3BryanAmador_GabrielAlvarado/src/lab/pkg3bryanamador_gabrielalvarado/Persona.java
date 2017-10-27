@@ -20,6 +20,16 @@ public class Persona {
     public String fecha;
 
     public Persona() {
+        super();
+    }
+
+    public Persona(String Usuario, String contrasena, String email, String nombreCompleto, String id, String fecha) {
+        this.Usuario = Usuario;
+        this.contrasena = contrasena;
+        this.email = email;
+        this.nombreCompleto = nombreCompleto;
+        this.id = id;
+        this.fecha = fecha;
     }
 
     public String getUsuario() {
@@ -69,6 +79,8 @@ public class Persona {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+ 
 
     @Override
     public String toString() {

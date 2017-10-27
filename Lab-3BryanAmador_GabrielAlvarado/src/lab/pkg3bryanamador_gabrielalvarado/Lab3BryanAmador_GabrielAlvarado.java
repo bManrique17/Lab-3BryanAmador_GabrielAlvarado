@@ -1,10 +1,13 @@
 package lab.pkg3bryanamador_gabrielalvarado;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Lab3BryanAmador_GabrielAlvarado {
+
+    
 
     public static void main(String[] args) {
         ArrayList<Locales> listLocales = new ArrayList();
@@ -13,6 +16,8 @@ public class Lab3BryanAmador_GabrielAlvarado {
         ArrayList<Cliente> listClientes = new ArrayList();//listCliente
         Scanner sc = new Scanner(System.in);
         char resp;
+        String Usocio = "SOCIO";
+        String Usociocontra = "1234";
         do {
             System.out.print("******LOG-IN******\n"
                     + "(1)Ingresar como socio\n"
@@ -20,9 +25,23 @@ public class Lab3BryanAmador_GabrielAlvarado {
                     + "(3)Registrar un cliente\n"
                     + "->Ingrese su opcion: ");
             String opcion = sc.next();
+            if(opcion.equals("1")){
+                System.out.println("Ingrese usuario");
+                String usuario = sc.next();
+                System.out.println("Ingrese contrasena:");
+                String contrasena = sc.next();
+                if(usuario.equals(Usocio) && contrasena.equals(Usociocontra)){
+                    
+                }else{
+                    System.out.println("INVALIDO");
+                    continue;
+                }
+            }else{
+                
             switch (opcion) {
                 case "1":
                     System.out.println("*******BIENVENIDO SOCIO*******");
+                    System.out.println("Ha inciado sesion");
                     char r;
                     do {
                         System.out.print("-------MENU-------\n"
@@ -37,7 +56,7 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                 System.out.print("(1)Tienda\n"
                                         + "(2)Quiosco\n"
                                         + "(3)Locales de comida\n"
-                                        +"(3)Eliminar locales"
+                                        + "(3)Eliminar locales"
                                         + "->Ingrese su opcion: ");
                                 opcion = sc.next();
                                 switch (opcion) {
@@ -115,7 +134,7 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                                     System.out.print("Desea ejecutar otra opcion [S/N]: ");
                                                     r = sc.next().charAt(0);
                                                 } while (r == 's' || r == 'S');
-                                            
+
                                             default:
                                                 System.out.println("invalido");
                                                 break;
@@ -142,7 +161,6 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                                             + "(2)Piso\n"
                                                             + "(3)Agregar empleados\n"
                                                             + "(4)Agregar productos\n"
-                                                    
                                                             + "->Ingrese su opcion: ");
                                                     opcion = sc.next();
                                                     switch (opcion) {
@@ -180,7 +198,7 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                                             System.out.println("->Ingrese el numero a agregar: ");
                                                             listLocales.get(pos).getListProductos().add(listProductos.get(sc.nextInt()));
                                                             break;
-                                                        
+
                                                         default:
                                                             System.out.println("Opcion invalida");
                                                     }
@@ -195,7 +213,7 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                         switch (CME()) {
                                             case "1":
                                                 localComida s = new localComida();
-                                                listLocales.add((Locales)new localComida() );
+                                                listLocales.add((Locales) new localComida());
                                                 System.out.println("Usted a creado una localComida");
                                                 break;
                                             case "2":
@@ -212,7 +230,6 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                                             + "(2)Piso\n"
                                                             + "(3)Agregar empleados\n"
                                                             + "(4)Agregar productos\n"
-                                                    
                                                             + "->Ingrese su opcion: ");
                                                     opcion = sc.next();
                                                     switch (opcion) {
@@ -235,10 +252,11 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                                                 cont++;
                                                             }
                                                             System.out.println("->Ingrese el numero a agregar: ");
-                                                            if(listLocales.get(pos).getListEmpleados().size()<4)
+                                                            if (listLocales.get(pos).getListEmpleados().size() < 4) {
                                                                 listLocales.get(pos).getListEmpleados().add(listEmpleados.get(sc.nextInt()));
-                                                            else
+                                                            } else {
                                                                 System.out.println("Estas en el maximo");
+                                                            }
                                                             break;
                                                         case "4":
                                                             if (listProductos.isEmpty()) {
@@ -251,10 +269,10 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                                                 cont++;
                                                             }
                                                             System.out.println("->Ingrese el numero a agregar: ");
-                                                            
-                                                                listLocales.get(pos).getListProductos().add(listProductos.get(sc.nextInt()));
+
+                                                            listLocales.get(pos).getListProductos().add(listProductos.get(sc.nextInt()));
                                                             break;
-                                                        
+
                                                         default:
                                                             System.out.println("Opcion invalida");
                                                     }
@@ -266,14 +284,14 @@ public class Lab3BryanAmador_GabrielAlvarado {
 
                                         break;
                                     case "4":
-                                        if(listLocales.isEmpty()){
+                                        if (listLocales.isEmpty()) {
                                             System.out.println("No hay locales");
                                             break;
                                         }
                                         System.out.println("Eliminar");
                                         int cc = 1;
                                         for (Locales x : listLocales) {
-                                            System.out.println(cc+" "+x);
+                                            System.out.println(cc + " " + x);
                                         }
                                         System.out.println("Ingrese el numero a eliminar");
                                         listLocales.remove(cc);
@@ -284,19 +302,19 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                 break;
                             case "2":
                                 System.out.println("********EMPLEADOS*******");
-                                switch(CME()){
+                                switch (CME()) {
                                     case "1":
                                         listEmpleados.add(new Empleado());
                                         System.out.println("Ha agregado un empleado");
                                         break;
                                     case "2":
-                                        if(listEmpleados.isEmpty()){
+                                        if (listEmpleados.isEmpty()) {
                                             System.out.println("No hay empledaos");
                                             break;
                                         }
                                         int cont6 = 1;
                                         for (Empleado E : listEmpleados) {
-                                            System.out.println(cont6 + " "+E);
+                                            System.out.println(cont6 + " " + E);
                                         }
                                         System.out.println("Ingrese el numero a modificar: ");
                                         int posi = sc.nextInt();
@@ -324,7 +342,7 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                         System.out.println("Modificado :)");
                                         break;
                                     case "3":
-                                        
+
                                         break;
                                     default:
                                         break;
@@ -343,39 +361,26 @@ public class Lab3BryanAmador_GabrielAlvarado {
                     break;
                 case "2":
                     System.out.println("*******BIENVENIDO CLIENTE*******");
+
                     Scanner leer = new Scanner(System.in);
 //Aqui empieza Gabriel
                     opcion = "s";
 
-                    while (opcion.equalsIgnoreCase("s")) {
-
+                    while (opcion.equalsIgnoreCase("f")) {
                         System.out.println("Ingrese una opcion\n"
                                 + "a.Agregar Cliente\n"
-                                + "b.Agregar Productos\n"
-                                + "c.Añadir Productos\n"
-                                + "d.Salir\n"
+                                + "b.Funciones del cliente\n"
+                                + "c.Salir\n"
                         );
-                        opcion = leer.next();
                         if (opcion.equalsIgnoreCase("a")) {
+
                             int dinero = 0;
                             System.out.println("Agregue la cantidad de dinero");
                             dinero = leer.nextInt();
                         }
-                        if (opcion.equalsIgnoreCase("b")) {
-                            int precio;
-                            String descripcion;
-                            String marca;
-                            double descuento;
-                            System.out.println("Ingrese precion");
-                            precio = leer.nextInt();
-                            System.out.println("Ingrese descripcion");
-                            descripcion = leer.next();
-                            System.out.println("Ingrese marca");
-                            marca = leer.next();
-                            System.out.println("Ingrese descuento");
-                            descuento = leer.nextDouble();
-                            listProductos.add(new Producto(precio, descripcion, marca, descuento));
-                        }
+
+                    }
+                    if (opcion.equalsIgnoreCase("b")) {
 
                         String op = "";
                         while (op.equalsIgnoreCase("f")) {
@@ -408,22 +413,130 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                 i = leer.nextInt();
                                 System.out.println("Ingrese la posicion de producto\n");
                                 i2 = leer.nextInt();
+                                if (listClientes.get(i).getDinero() > listProductos.get(i2).getPrecio()) {
+                                    listClientes.get(i).setDinero(listClientes.get(i).getDinero() - listProductos.get(i2).getPrecio());
+                                    listClientes.get(i).getListProducto().add(listProductos.get(i));
+                                } else {
+                                    JOptionPane.showInputDialog("No tiene suficiente dinero");
+                                }
 
-                                listClientes.get(i).getListProducto().add(listProductos.get(i));
                             }
                         }
-                        System.out.println("Desea continuar [S/N]: ");
-                        opcion = sc.next();
+
                     }
-                    break;
-                default:
+                    System.out.println("Desea continuar [S/N]: ");
+                    opcion = sc.next();
+            
+            break;
+                case "3":
+                    String op = "";
+
+        while (!op.equalsIgnoreCase(
+                "c")) {
+            System.out.println("***MENU***\n"
+                    + "a.Agregar personas\n"
+                    + "b.Modificar Personas\n"
+                    + "c.Eliminar Personas\n"
+                    + "d.Listar\n"
+                    + "c.Salir\n");
+        }
+        Scanner leer1 = new Scanner(System.in);
+        op = leer1.next();
+
+        if (op.equalsIgnoreCase(
+                "a")) {
+            listClientes.add(new Cliente());
+
+        }
+
+        if (op.equalsIgnoreCase(
+                "b")) {
+            String usuario;
+            String contrasena;
+            String nombre;
+            String id;
+            String fecha;
+
+            String email;
+
+            System.out.println("Ingrese usuario\n");
+            usuario = leer1.next();
+            System.out.println("Ingrese contraseña\n");
+            contrasena = leer1.next();
+            System.out.println("Ingrese nombre completo\n");
+            nombre = leer1.nextLine();
+            System.out.println("Ingrese id\n");
+            id = leer1.next();
+            System.out.println("Ingrese fecha");
+            fecha = JOptionPane.showInputDialog("Ingrese fecha");
+
+            System.out.println("Ingrese email\n");
+            email = leer1.next();
+            int j;
+            System.out.println("Ingrese la posicion\n");
+            j = leer1.nextInt();
+            listClientes.get(j).setUsuario(usuario);
+            listClientes.get(j).setContrasena(contrasena);
+            listClientes.get(j).setEmail(email);
+            listClientes.get(j).setFecha(fecha);
+            listClientes.get(j).setId(id);
+            listClientes.get(j).setNombreCompleto(nombre);
+        }
+
+        if (op.equalsIgnoreCase(
+                "c")) {
+            int k;
+            System.out.println("Ingrese la posicion a eliminar\n");
+            k = leer1.nextInt();
+            listClientes.remove(k);
+        }
+
+        if (op.equalsIgnoreCase(
+                "d")) {
+            String o = "";
+            for (Cliente arg : listClientes) {
+                o += listClientes.indexOf(arg) + "" + ((Cliente) arg);
+            }
+            JOptionPane.showConfirmDialog(null, o);
+        }
+        String ele = "";
+
+        System.out.println(
+                "***Menu***\n"
+                + "a.Factura\n");
+
+        ele = leer1.next();
+        int total = 0;
+        String cad = "";
+        for (Cliente a : listClientes) {
+            cad += listClientes.indexOf(a) + "" + ((Cliente) a);
+        }
+
+        JOptionPane.showMessageDialog(
+                null, cad);
+
+        int l;
+
+        System.out.println(
+                "Ingrese la posicion");
+        l = leer1.nextInt();
+        int tota=0;
+        tota=(int)(listClientes.get(l)
+                .getListProducto().get(l).getPrecio() * listClientes.get(l).getListProducto().get(l).getDescuento());
+        break;
+          default:
                     System.out.println("Opcion invalida");
+            break;
             }
             System.out.print("Desea continuar [S/N]: ");
-            resp = sc.next().charAt(0);
-        } while (resp == 's' || resp == 'S');
+        resp = sc.next().charAt(0);
+    }
+    while (resp == 's' || resp == 'S');
 
     }
+    
+
+    
 
     public static String CME() {
         Scanner sc1 = new Scanner(System.in);
@@ -435,3 +548,6 @@ public class Lab3BryanAmador_GabrielAlvarado {
     }
 
 }
+
+
+
