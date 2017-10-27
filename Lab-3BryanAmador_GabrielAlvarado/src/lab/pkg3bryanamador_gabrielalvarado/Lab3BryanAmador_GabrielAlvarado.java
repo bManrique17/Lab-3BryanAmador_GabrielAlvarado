@@ -38,6 +38,8 @@ public class Lab3BryanAmador_GabrielAlvarado {
                 }
             }else{
                 
+            }
+                
             switch (opcion) {
                 case "1":
                     System.out.println("*******BIENVENIDO SOCIO*******");
@@ -530,8 +532,7 @@ public class Lab3BryanAmador_GabrielAlvarado {
             }
             System.out.print("Desea continuar [S/N]: ");
         resp = sc.next().charAt(0);
-    }
-    while (resp == 's' || resp == 'S');
+    }while (resp == 's' || resp == 'S');
 
     }
     
