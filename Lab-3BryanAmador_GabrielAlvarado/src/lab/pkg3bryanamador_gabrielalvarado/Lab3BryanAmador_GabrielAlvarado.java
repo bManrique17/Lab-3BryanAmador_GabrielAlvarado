@@ -15,7 +15,7 @@ public class Lab3BryanAmador_GabrielAlvarado {
         ArrayList<Producto> listProductos = new ArrayList();
         ArrayList<Cliente> listClientes = new ArrayList();//listCliente
         Scanner sc = new Scanner(System.in);
-        char resp;
+        char resp = ' ';
         String Usocio = "SOCIO";
         String Usociocontra = "1234";
         do {
