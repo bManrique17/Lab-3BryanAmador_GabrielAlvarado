@@ -301,9 +301,30 @@ public class Lab3BryanAmador_GabrielAlvarado {
                                         System.out.println("Ingrese el numero a modificar: ");
                                         int posi = sc.nextInt();
                                         System.out.println("Ingrese nuevo username: ");
+                                        new Scanner(System.in);
                                         listEmpleados.get(posi).setUsuario(sc.next());
+                                        System.out.println("Ingrese nuevo password: ");
+                                        new Scanner(System.in);
+                                        listEmpleados.get(posi).setContrasena(sc.next());
+                                        System.out.println("Ingrese nuevo email: ");
+                                        new Scanner(System.in);
+                                        listEmpleados.get(posi).setEmail(sc.next());
+                                        System.out.println("Ingrese nuevo nombre: ");
+                                        new Scanner(System.in);
+                                        listEmpleados.get(posi).setNombreCompleto(sc.next());
+                                        System.out.println("Ingrese nuevo ID: ");
+                                        new Scanner(System.in);
+                                        listEmpleados.get(posi).setId(sc.next());
+                                        System.out.println("Ingrese fecha nancimiento: ");
+                                        new Scanner(System.in);
+                                        listEmpleados.get(posi).setFecha(sc.next());
+                                        System.out.println("Ingrese horario ");
+                                        new Scanner(System.in);
+                                        listEmpleados.get(posi).setHorario(sc.nextInt());
+                                        System.out.println("Modificado :)");
                                         break;
                                     case "3":
+                                        
                                         break;
                                     default:
                                         break;

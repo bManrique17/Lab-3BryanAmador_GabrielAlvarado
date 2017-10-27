@@ -17,7 +17,7 @@ public class Persona {
     public String email;
     public String nombreCompleto;
     public String id;
-    public Date fecha;
+    public String fecha;
 
     public Persona() {
     }
@@ -62,11 +62,11 @@ public class Persona {
         this.id = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
