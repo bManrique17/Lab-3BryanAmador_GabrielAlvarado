@@ -3,7 +3,7 @@ package lab.pkg3bryanamador_gabrielalvarado;
 
 import java.util.ArrayList;
 
-public class localComida {
+public class localComida extends Locales{
     
     ArrayList<Empleado> listEmpleados = new ArrayList();
     ArrayList<Producto> listProductoAlimenticios = new ArrayList();
